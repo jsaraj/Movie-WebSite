@@ -17,12 +17,7 @@ const Header = () => {
                     </ul>
                 </nav>
                 <Link href={"/"} className="hover:scale-105 transition-all duration-100">
-                    <Image 
-                    src="/logo.png"
-                    width={80}
-                    height={30}
-                    alt="Logo"
-                    />
+                <Image width={60} height={60} src={"/loading.svg"} alt="loading"/>
                 </Link>
             </div>
         </header>
