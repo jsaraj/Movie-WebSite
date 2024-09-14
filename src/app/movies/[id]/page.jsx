@@ -1,13 +1,18 @@
 
+import not_found from "../../not-found";
 import Image from "next/image";
 
-const getData = async (title) => {
-    const data = await fetch(`https://moviesapi.ir/api/v1/movies/${title}`);
+
+const getData = async (id) => {
+    const data = await fetch(`https://moviesapi.ir/api/v1/movies/${id}`);
     return data.json();
 }
 const page = async ({ params }) => {
 
     const movie = await getData(params.id);
+    if(!movie.id){
+        return not_found();
+    }
 
     return (
         <div className="mx-20 my-10" >

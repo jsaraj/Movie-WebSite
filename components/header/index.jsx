@@ -12,7 +12,7 @@ const Header = () => {
                             <Link href={"/"} >Home</Link>
                         </li>
                         <li className=" py-1 px-5 transition-all duration-300 hover:border-b hover:border-orange-500 hover:scale-105 font-semibold ">
-                            <Link href={"./movies"}>Movies</Link>
+                            <Link href={"/movies"}>Movies</Link>
                         </li>
                     </ul>
                 </nav>
