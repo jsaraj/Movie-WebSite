@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { SiImdb } from "react-icons/si";
 
 const getData = async () => {
@@ -7,13 +8,18 @@ const getData = async () => {
 }
 
 const page = async () => {
+
+
   const movies = await getData();
+
   return (
     <div className="flex items-center flex-wrap justify-around px-20">
       {
         movies.data.map((item, i) => (
-          <div key={i} className=" relative w-72 h-[530px] border rounded-md my-6 overflow-hidden shadow-sm transition-all duration-200 hover:scale-105">
-            <Image className="" alt={item.title} width={288} height={260} src={item.poster} />
+          <Link
+          href={`/movies/${item.id}`}
+          key={i} className="cursor-pointer relative w-72 h-[530px] border rounded-md my-6 overflow-hidden shadow-sm transition-all duration-200 hover:scale-105">
+            <Image alt={item.title} width={288} height={260} src={item.poster} />
             <div className="py-1 px-2 ">
               <h2 className="text-center pb-1 text-lg">{item.title}</h2>
               <div className="">
@@ -22,7 +28,7 @@ const page = async () => {
               </div>
             </div>
 
-          </div>
+          </Link>
         ))
       }
     </div>
