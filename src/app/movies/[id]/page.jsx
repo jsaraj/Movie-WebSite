@@ -15,7 +15,7 @@ const page = async ({ params }) => {
     }
 
     return (
-        <div className="mx-20 my-10" >
+        <div className="ml-5 mr-20 my-10" >
             <div className=" py-12 px-10 bg-gray-200  rounded-md">
                 <section className="flex items-start justify-between ">
                     <div className="flex flex-col gap-4">
