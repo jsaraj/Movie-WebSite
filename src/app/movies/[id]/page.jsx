@@ -10,13 +10,13 @@ const getData = async (id) => {
 const page = async ({ params }) => {
 
     const movie = await getData(params.id);
-    if(!movie.id){
+    if (!movie.id) {
         return not_found();
     }
 
     return (
-        <div className="ml-5 mr-20 my-10" >
-            <div className=" py-12 px-10 bg-gray-200  rounded-md">
+        <div className="mx-20 my-10  flex" >
+            <main className=" py-12 px-10 bg-gray-200 mr-1  rounded-md">
                 <section className="flex items-start justify-between ">
                     <div className="flex flex-col gap-4">
                         <h1 className="font-semibold border-b border-orange-400 pb-2">{movie.title}</h1>
@@ -55,8 +55,11 @@ const page = async ({ params }) => {
                         ))
                     }
                 </div>
-            </div>
-
+            </main>
+            <aside className="w-3/12 bg-gray-200 rounded-md ml-1 p-8">
+                <h3 className="text-center border-b border-orange-400 pb-2 mb-2">SideBar</h3>
+                <p className="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur dignissimos nostrum tempore numquam a. Possimus laboriosam similique enim magnam. Earum, dicta, quas maiores tempore ratione veritatis facere dolore provident rem nobis iste sapiente possimus expedita officia incidunt eligendi, culpa natus corrupti. Amet dolores doloribus rem incidunt est quidem sunt dolorum qui totam accusamus voluptatibus deserunt eaque quaerat sint ipsum exercitationem reprehenderit porro consequuntur, consectetur aspernatur obcaecati quibusdam. Doloremque optio veniam, iusto delectus itaque totam eveniet magnam dolorum. Ullam nam accusamus culpa sequi inventore minus illo veniam! Nobis incidunt iste eum dolore unde laudantium quasi quibusdam adipisci nemo fuga, quam iure perferendis ducimus officia aliquid culpa nulla non voluptatem deleniti </p>
+            </aside>
         </div>
     );
 }
